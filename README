@@ -1,0 +1,7 @@
+1) install git
+2) install tmux
+3) install vim
+4) git clone https://toranb@bitbucket.org/toranb/super-basic-dotfilez.git dotfilez
+5) cd dotfilez
+6) bash symlink.sh
+7) restart terminal
