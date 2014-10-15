@@ -18,7 +18,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'toranb/tmux-navigator'
 call neobundle#end()
 
