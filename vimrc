@@ -11,7 +11,7 @@ endif
 if has('vim_starting')
     set rtp+=$HOME/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand($HOME.'/.vim/bundle/'))
+call neobundle#begin(expand($HOME.'/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdtree'
@@ -20,6 +20,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'toranb/tmux-navigator'
+call neobundle#end()
+
 if iCanHazNeoBundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
