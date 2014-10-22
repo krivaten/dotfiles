@@ -52,6 +52,8 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files=0
 let g:ctrlp_max_height = 18
 let mapleader=" "
+
+nnoremap <C-S-n> :CtrlP<CR>
 nnoremap <Leader>ff :CtrlP<CR>
 map <Leader>fb :CtrlPBuffer<CR>
 map <Leader>d :NERDTreeToggle<CR>
