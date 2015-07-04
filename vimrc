@@ -19,6 +19,8 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'toranb/tmux-navigator'
+NeoBundle 'toranb/nerd-ack'
+NeoBundle 'toranb/vim-ack'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
@@ -60,3 +62,4 @@ map <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader><Leader> <c-^>
 nnoremap <Esc><Esc> :nohlsearch<CR>
+map <Leader>a :Ack!<space>
