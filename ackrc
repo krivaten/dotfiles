@@ -8,3 +8,7 @@
 --type=handlebars
 --type=javascript
 --type=typescript
+--ignore-dir=node_modules
+--ignore-dir=bower_components
+--ignore-dir=dist
+--ignore-dir=tmp
