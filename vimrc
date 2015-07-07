@@ -22,6 +22,7 @@ NeoBundle 'toranb/nerd-ack'
 NeoBundle 'toranb/vim-ack'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'thinca/vim-qfreplace'
+NeoBundle 'tpope/vim-commentary'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
