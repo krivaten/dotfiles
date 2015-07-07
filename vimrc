@@ -84,3 +84,8 @@ map <Leader>a :Ack!<space>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap <silent> yp :call <SID>setup_paste()<CR>a 
+
+nnoremap <C-j> <C-w>j  
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
