@@ -6,3 +6,7 @@
 6) cd dotfilez
 7) bash symlink.sh
 8) restart terminal
+
+**if you want to use the python functions install jedi globally
+
+sudo pip install jedi

@@ -23,6 +23,7 @@ NeoBundle 'toranb/vim-ack'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'tpope/vim-commentary'
+NeoBundle 'davidhalter/jedi-vim'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
@@ -41,6 +42,13 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set nobackup
+set noswapfile
+set noerrorbells
+set nowrap
+set clipboard=unnamed
+set autoread
+set autowrite
 syntax enable
 colorscheme solarized
 let g:solarized_termcolors = &t_Co
@@ -50,6 +58,8 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
 
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#goto_command = "<leader>j"
 let NERDTreeIgnore = ['\.pyc$']
 let g:ctrlp_use_caching=0
 let g:ctrlp_custom_ignore = '\v[\/](build)|dist|tmp|bower_components|node_modules|(\.(swp|git|bak|pyc|swp|DS_Store))$'
