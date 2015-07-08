@@ -42,6 +42,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set undolevels=1000
+set hidden
 set nobackup
 set noswapfile
 set noerrorbells
