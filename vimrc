@@ -24,6 +24,8 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'bling/vim-airline'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
@@ -35,7 +37,6 @@ NeoBundleCheck
 
 filetype plugin on
 filetype indent on
-set nowrap
 set t_Co=256
 set number
 set tabstop=4
@@ -47,18 +48,31 @@ set hidden
 set nobackup
 set noswapfile
 set noerrorbells
-set nowrap
 set clipboard=unnamed
 set autoread
 set autowrite
+set backspace=indent,eol,start
+set laststatus=2
+set splitbelow
+set splitright
+let g:airline_theme='solarized'                   " Use the custom theme I wrote
+let g:airline_left_sep=''                           " No separator as they seem to look funky
+let g:airline_right_sep=''                          " No separator as they seem to look funky
+let g:airline#extensions#branch#enabled = 0         " Do not show the git branch in the status line
+let g:airline#extensions#syntastic#enabled = 1      " Do show syntastic warnings in the status line
+let g:airline#extensions#tabline#show_buffers = 0   " Do not list buffers in the status line
+let g:airline_section_x = ''                        " Do not list the filetype or virtualenv in the status line
+let g:airline_section_y = '[R%04l,C%04v] [LEN=%L]'  " Replace file encoding and file format info with file position
+let g:airline_section_z = ''                        " Do not show the default file position info
+let g:airline#extensions#virtualenv#enabled = 0
 syntax enable
-colorscheme solarized
 let g:solarized_termcolors = &t_Co
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-set background=dark
+colorscheme solarized
+set background=light
 
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_command = "<leader>j"
@@ -66,10 +80,18 @@ let NERDTreeIgnore = ['\.pyc$']
 let g:ctrlp_use_caching=0
 let g:ctrlp_custom_ignore = '\v[\/](build)|dist|tmp|bower_components|node_modules|(\.(swp|git|bak|pyc|swp|DS_Store))$'
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_open_multiple_files = '1jr'
 let g:ctrlp_max_files=0
-let g:ctrlp_max_height = 18
+let g:ctrlp_max_height = 25
+let g:ctrlp_custom_ignore = '\v[\/](transpiled)|dist|tmp|q2-uux/app|bower_components|node_modules|(\.(swp|git|bak|pyc|DS_Store))$'
 let mapleader=" "
-
+let g:ctrlp_user_command = {
+	\ 'types': {
+		\ 1: ['.git', 'cd %s && git ls-files'],
+		\ },
+	\ 'fallback': 'find %s -type f'
+	\ }
+nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
 function! s:setup_paste() abort
     let s:paste = &paste
     set paste
@@ -101,3 +123,4 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+inoremap jk <ESC>
