@@ -46,6 +46,7 @@ set expandtab
 set undolevels=1000
 set hidden
 set nobackup
+set nowrap
 set noswapfile
 set noerrorbells
 set clipboard=unnamed
@@ -72,7 +73,7 @@ let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized
-set background=light
+set background=dark
 
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_command = "<leader>j"
@@ -85,12 +86,6 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_height = 25
 let g:ctrlp_custom_ignore = '\v[\/](transpiled)|dist|tmp|q2-uux/app|bower_components|node_modules|(\.(swp|git|bak|pyc|DS_Store))$'
 let mapleader=" "
-let g:ctrlp_user_command = {
-	\ 'types': {
-		\ 1: ['.git', 'cd %s && git ls-files'],
-		\ },
-	\ 'fallback': 'find %s -type f'
-	\ }
 nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
 function! s:setup_paste() abort
     let s:paste = &paste
