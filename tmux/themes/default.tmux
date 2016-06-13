@@ -16,7 +16,6 @@ set -g pane-base-index 1
 # -------------
 # status line
 # -------------
-set -g status-utf8 on
 set -g status-justify left
 set -g status-bg black
 set -g status-fg white
@@ -43,9 +42,3 @@ setw -g window-status-attr default
 set -g status-left ''
 set -g status-right-length 150
 set -g status-right '#[fg=colour69] #(hostname -I | cut -d " " -f 1) | %H:%M '
-set -g status-utf8 on
-
-# -------------
-# Mouse mode on
-# -------------
-#setw -g mode-mouse on
