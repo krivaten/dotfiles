@@ -15,11 +15,15 @@ call neobundle#begin(expand($HOME.'/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'toranb/tmux-navigator'
 NeoBundle 'toranb/nerd-ack'
 NeoBundle 'toranb/vim-ack'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'tpope/vim-commentary'
@@ -56,6 +60,8 @@ set backspace=indent,eol,start
 set laststatus=2
 set splitbelow
 set splitright
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+set list
 let g:airline_theme='solarized'                   " Use the custom theme I wrote
 let g:airline_left_sep=''                           " No separator as they seem to look funky
 let g:airline_right_sep=''                          " No separator as they seem to look funky
@@ -72,8 +78,7 @@ let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme solarized
-set background=dark
+" set background=dark
 
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_command = "<leader>j"
@@ -102,7 +107,7 @@ function! VisualFindAndReplaceWithSelection() range
     :w
 endfunction
 
-nnoremap <C-S-n> :CtrlP<CR>
+"nnoremap <C-S-n> :CtrlP<CR>
 nnoremap <Leader>ff :CtrlP<CR>
 map <Leader>fb :CtrlPBuffer<CR>
 map <Leader>d :NERDTreeToggle<CR>
@@ -119,3 +124,17 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 inoremap jk <ESC>
+
+"Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+"Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+"Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+
