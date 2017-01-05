@@ -30,6 +30,7 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'jiangmiao/auto-pairs'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
