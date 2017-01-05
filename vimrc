@@ -137,4 +137,6 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-
+"Auto Commands"
+"Remove whitespace""
+autocmd BufWritePre * %s/\s\+$//e
