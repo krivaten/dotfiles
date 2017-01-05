@@ -1,4 +1,3 @@
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/kvanhouten/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -132,6 +131,8 @@ prompt_git() {
 # Example aliases
 alias g='git'
 alias e='ember'
+alias etS='e t -sf KVH'
+alias nbi='npm i && bower i'
 alias gco='git checkout'
 alias gcp='git cherry-pick'
 alias grc='git rebase --continue'
@@ -146,8 +147,9 @@ alias ts='tig status'
 alias evim='vim ~/.vimrc'
 alias ezsh='vim ~/.zshrc'
 alias v='vim'
-alias vt='vim -c CommandT'
+alias vc='vim -c CtrlP'
 alias vn='vim -c NERDTree'
+alias vnginx='vim /usr/local/etc/nginx/nginx.conf'
 alias dswp='find . -type f -name "*.swp" -delete';
 
 qGrepFunction() {
@@ -159,6 +161,7 @@ export NVM_DIR="/Users/kvanhouten/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin" # Add RVM to PATH for scripting
+export PGDATA=/usr/local/var/postgres
 
 # added by travis gem
 [ -f /Users/kvanhouten/.travis/travis.sh ] && source /Users/kvanhouten/.travis/travis.sh
