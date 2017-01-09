@@ -1,4 +1,4 @@
-export ZSH=/Users/kvanhouten/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
