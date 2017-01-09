@@ -12,7 +12,6 @@ if has('vim_starting')
     set rtp+=$HOME/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand($HOME.'/.vim/bundle/'))
-NeoBundle 'trevordmiller/nova-vim'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'kien/ctrlp.vim'
@@ -65,7 +64,9 @@ set splitbelow
 set splitright
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
-colorscheme nova
+set relativenumber
+set number
+set cursorline
 let g:airline_theme='solarized'                   " Use the custom theme I wrote
 let g:airline_left_sep=''                           " No separator as they seem to look funky
 let g:airline_right_sep=''                          " No separator as they seem to look funky
@@ -121,26 +122,31 @@ nnoremap <Esc><Esc> :nohlsearch<CR>
 map <Leader>a :Ack!<space>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
-nnoremap <silent> yp :call <SID>setup_paste()<CR>a 
+nnoremap <silent> yp :call <SID>setup_paste()<CR>a
 
-nnoremap <C-j> <C-w>j  
+nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 inoremap jk <ESC>
 
-"Normal mode
+" Normal mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-"Insert mode
+" Insert mode
 inoremap <C-j> <ESC>:m .+1<CR>==gi
 inoremap <C-k> <ESC>:m .-2<CR>==gi
 
-"Visual mode
+" Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"Auto Commands"
-"Remove whitespace""
+" Remove whitespace""
 autocmd BufWritePre * %s/\s\+$//e
+
+" Custom Theming
+" https://jonasjacek.github.io/colors/
+hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
+hi LineNr ctermbg=235 ctermfg=245
+hi CursorLineNr ctermbg=235 ctermfg=9 cterm=bold
