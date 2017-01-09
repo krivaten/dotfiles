@@ -12,6 +12,7 @@ if has('vim_starting')
     set rtp+=$HOME/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand($HOME.'/.vim/bundle/'))
+NeoBundle 'trevordmiller/nova-vim'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'kien/ctrlp.vim'
@@ -28,6 +29,7 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -63,6 +65,7 @@ set splitbelow
 set splitright
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
+colorscheme nova
 let g:airline_theme='solarized'                   " Use the custom theme I wrote
 let g:airline_left_sep=''                           " No separator as they seem to look funky
 let g:airline_right_sep=''                          " No separator as they seem to look funky
