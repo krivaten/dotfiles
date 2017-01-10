@@ -13,7 +13,7 @@ Ensure you have the following installed
 ## Installations
 ### Homebrew
 ```
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ brew install git
 $ brew install tmux
 $ brew install ack
