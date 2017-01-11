@@ -45,7 +45,6 @@ NeoBundleCheck
 filetype plugin on
 filetype indent on
 set t_Co=256
-set number
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -56,7 +55,6 @@ set nobackup
 set nowrap
 set noswapfile
 set noerrorbells
-set clipboard=unnamed
 set autoread
 set autowrite
 set backspace=indent,eol,start
@@ -84,7 +82,6 @@ let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-" set background=dark
 
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_command = "<leader>j"
@@ -142,6 +139,11 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Use Silver Search with Ack!"
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 " Remove whitespace""
 autocmd BufWritePre * %s/\s\+$//e
