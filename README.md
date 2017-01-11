@@ -26,8 +26,9 @@ $ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install
 $ sh ./install.sh
 ```
 
-## Instructions
-- `git clone https://github.com/krivaten/dotfiles.git dotfilez`
-- `cd dotfilez`
-- `bash symlink.sh`
-- Restart terminal
+## Getting Started
+```
+$ git clone https://github.com/krivaten/dotfiles.git ~/dotfilez
+$ cd ~/dotfilez
+$ bash symlink.sh
+```
