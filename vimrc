@@ -1,5 +1,5 @@
-set nocompatible
 let iCanHazNeoBundle=1
+set nocompatible
 let neobundle_readme=expand($HOME.'/.vim/bundle/neobundle.vim/README.md')
 if !filereadable(neobundle_readme)
     echo "Installing NeoBundle.."
@@ -33,6 +33,7 @@ NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'dustinfarris/vim-htmlbars-inline-syntax'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
@@ -63,8 +64,10 @@ set splitbelow
 set splitright
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
+set ignorecase
 set relativenumber
 set number
+syntax enable
 set cursorline
 let g:airline_theme='solarized'                   " Use the custom theme I wrote
 let g:airline_left_sep=''                           " No separator as they seem to look funky
@@ -76,7 +79,6 @@ let g:airline_section_x = ''                        " Do not list the filetype o
 let g:airline_section_y = '[R%04l,C%04v] [LEN=%L]'  " Replace file encoding and file format info with file position
 let g:airline_section_z = ''                        " Do not show the default file position info
 let g:airline#extensions#virtualenv#enabled = 0
-syntax enable
 let g:solarized_termcolors = &t_Co
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
@@ -85,30 +87,20 @@ let g:solarized_contrast = "high"
 
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_command = "<leader>j"
-let NERDTreeIgnore = ['\.pyc$']
 let g:ctrlp_use_caching=0
-let g:ctrlp_custom_ignore = '\v[\/](build)|dist|tmp|bower_components|node_modules|(\.(swp|git|bak|pyc|swp|DS_Store))$'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multiple_files = '1jr'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_height = 25
-let g:ctrlp_custom_ignore = '\v[\/](transpiled)|dist|tmp|q2-uux/app|bower_components|node_modules|(\.(swp|git|bak|pyc|DS_Store))$'
+let g:ctrlp_custom_ignore = '\v[\/](transpiled)|dist|tmp|bower_components|node_modules|(\.(swp|git|bak|pyc|DS_Store))$'
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 let mapleader=" "
 nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
-function! s:setup_paste() abort
-    let s:paste = &paste
-    set paste
-endfunction
-
-function! VisualFindAndReplace()
-    :OverCommandLine%s/
-    :w
-endfunction
-
-function! VisualFindAndReplaceWithSelection() range
-    :'<,'>OverCommandLine s/
-    :w
-endfunction
 
 "nnoremap <C-S-n> :CtrlP<CR>
 nnoremap <Leader>ff :CtrlP<CR>
@@ -116,11 +108,7 @@ map <Leader>fb :CtrlPBuffer<CR>
 map <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader><Leader> <c-^>
-nnoremap <Esc><Esc> :nohlsearch<CR>
 map <Leader>a :Ack!<space>
-nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
-xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
-nnoremap <silent> yp :call <SID>setup_paste()<CR>a
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
