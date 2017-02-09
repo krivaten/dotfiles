@@ -83,7 +83,7 @@ alias vnginx='vim /usr/local/etc/nginx/nginx.conf'
 alias dswp='find . -type f -name "*.swp" -delete';
 
 qGrepFunction() {
-    grep -rI --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=tmp $1 ~/Documents/Q2/{ngam-424/q2-uux/addon,addons}
+    grep -rI --exclude-dir={node_modules,bower_components,tmp} $1 ~/Documents/Q2/{ngam-424/q2-uux/addon,addons}
 }
 alias qGrep=qGrepFunction
 
