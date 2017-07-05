@@ -149,3 +149,8 @@ autocmd BufWritePre * %s/\s\+$//e
 hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
 hi LineNr ctermbg=235 ctermfg=245
 hi CursorLineNr ctermbg=235 ctermfg=9 cterm=bold
+" highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+
+" Line Length Column
+set colorcolumn=80,120
+highlight ColorColumn ctermbg=235
