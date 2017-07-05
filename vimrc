@@ -136,11 +136,6 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" Use Silver Search with Ack!"
-if executable('ag')
-    let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
-
 " Remove whitespace""
 autocmd BufWritePre * %s/\s\+$//e
 
