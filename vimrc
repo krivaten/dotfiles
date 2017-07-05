@@ -54,27 +54,46 @@ NeoBundleCheck
 filetype plugin on
 filetype indent on
 set t_Co=256
+
+" Indenting Stuff
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set undolevels=1000
-set hidden
+set smarttab
+set shiftround
+set autoindent
+set smartindent
+
+
+" Backups
 set nobackup
-set nowrap
+set nowritebackup
 set noswapfile
-set noerrorbells
+
+" Buffer Stuff
+set hidden
 set autoread
+
+" Search
+set ignorecase
+set incsearch
+set hlsearch
+
+" Misc
+set undolevels=1000
+set noerrorbells
 set autowrite
+set clipboard=unnamed
 set backspace=indent,eol,start
 set laststatus=2
 set splitbelow
 set splitright
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
-set ignorecase
 set relativenumber
 set number
+
 syntax enable
 set cursorline
 let g:airline_theme='solarized'                   " Use the custom theme I wrote
@@ -95,6 +114,8 @@ let g:solarized_contrast = "high"
 
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_command = "<leader>j"
+
+" CTRLP
 let g:ctrlp_use_caching=0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multiple_files = '1jr'
@@ -138,6 +159,7 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Save Hack
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
 " Custom Theming
 " https://jonasjacek.github.io/colors/
 hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
