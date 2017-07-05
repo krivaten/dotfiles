@@ -93,3 +93,18 @@ export PGDATA=/usr/local/var/postgres
 # added by travis gem
 [ -f /Users/kvanhouten/.travis/travis.sh ] && source /Users/kvanhouten/.travis/travis.sh
 
+cd_nvm_use() {
+  if [[ -a ".nvmrc" ]]; then
+    NODE_VERSION=$(nvm version)
+    NVM_VERSION=$(nvm version $(cat ".nvmrc"))
+    if [ $NODE_VERSION != $NVM_VERSION ]; then
+      nvm use
+    fi
+  fi
+}
+
+cd() {
+  builtin cd "$@"
+  unset NODE_NAME
+  cd_nvm_use
+}
