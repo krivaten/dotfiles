@@ -110,19 +110,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let mapleader=" "
 nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
 
-"nnoremap <C-S-n> :CtrlP<CR>
 nnoremap <Leader>ff :CtrlP<CR>
 map <Leader>fb :CtrlPBuffer<CR>
 map <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader><Leader> <c-^>
 map <Leader>a :Ack!<space>
+map <Leader>ca :ccl<CR>
 
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-inoremap jk <ESC>
 
 " Normal mode
 nnoremap <C-j> :m .+1<CR>==
@@ -131,6 +126,8 @@ nnoremap <C-k> :m .-2<CR>==
 " Insert mode
 inoremap <C-j> <ESC>:m .+1<CR>==gi
 inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+inoremap jk <ESC> " Exit Insert Mode
 
 " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
