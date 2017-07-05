@@ -3,11 +3,13 @@
 --type-set=handlebars=.hbs
 --type-set=javascript=.js
 --type-set=typescript=.ts
+--type-set=styles=.sass,.scss,.css
 --type=python
 --type=ruby
 --type=handlebars
 --type=javascript
 --type=typescript
+--type=styles
 --ignore-dir=node_modules
 --ignore-dir=bower_components
 --ignore-dir=dist
