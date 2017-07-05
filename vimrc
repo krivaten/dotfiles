@@ -34,6 +34,8 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'dustinfarris/vim-htmlbars-inline-syntax'
+NeoBundle 'digitaltoad/vim-pug'
+NeoBundle 'posva/vim-vue'
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
