@@ -123,11 +123,6 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_height = 25
 let g:ctrlp_custom_ignore = '\v[\/](transpiled)|dist|tmp|bower_components|node_modules|(\.(swp|git|bak|pyc|DS_Store))$'
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 let mapleader=" "
 nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
 
