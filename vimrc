@@ -144,6 +144,8 @@ endif
 " Remove whitespace""
 autocmd BufWritePre * %s/\s\+$//e
 
+" Save Hack
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 " Custom Theming
 " https://jonasjacek.github.io/colors/
 hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
