@@ -18,8 +18,8 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'w0rp/ale'
 NeoBundle 'toranb/tmux-navigator'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'toranb/nerd-ack'
@@ -51,6 +51,19 @@ if iCanHazNeoBundle == 0
 endif
 NeoBundleCheck
 
+" Ale Settings
+let g:ale_lint_on_text_changed = "normal"
+let g:ale_sign_column_always = 1
+let g:ale_change_sign_column_color = 1
+let g:ale_sign_error = '!!'
+let g:ale_sign_warning = '??'
+hi ALESignColumnWithErrors ctermbg=235
+hi ALESignColumnWithoutErrors ctermbg=235
+hi ALEErrorSign ctermbg=235 ctermfg=160 cterm=bold
+hi ALEWarningSign ctermbg=235 ctermfg=172 cterm=bold
+hi ALEError ctermbg=160 ctermfg=NONE
+hi ALEWarning ctermbg=172 ctermfg=NONE
+
 filetype plugin on
 filetype indent on
 set t_Co=256
@@ -78,7 +91,6 @@ set autoread
 " Search
 set ignorecase
 set incsearch
-set hlsearch
 
 " Misc
 set undolevels=1000
@@ -96,16 +108,12 @@ set number
 
 syntax enable
 set cursorline
-let g:airline_theme='solarized'                   " Use the custom theme I wrote
+let g:airline_theme='solarized'
 let g:airline_left_sep=''                           " No separator as they seem to look funky
 let g:airline_right_sep=''                          " No separator as they seem to look funky
-let g:airline#extensions#branch#enabled = 0         " Do not show the git branch in the status line
-let g:airline#extensions#syntastic#enabled = 1      " Do show syntastic warnings in the status line
-let g:airline#extensions#tabline#show_buffers = 0   " Do not list buffers in the status line
 let g:airline_section_x = ''                        " Do not list the filetype or virtualenv in the status line
 let g:airline_section_y = '[R%04l,C%04v] [LEN=%L]'  " Replace file encoding and file format info with file position
 let g:airline_section_z = ''                        " Do not show the default file position info
-let g:airline#extensions#virtualenv#enabled = 0
 let g:solarized_termcolors = &t_Co
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
@@ -132,8 +140,7 @@ map <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader><Leader> <c-^>
 map <Leader>a :Ack!<space>
-map <Leader>ca :ccl<CR>
-
+map <Leader>ca :ccl<CR>:lclose<CR>
 
 " Normal mode
 nnoremap <C-j> :m .+1<CR>==
@@ -154,6 +161,15 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Save Hack
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
+" Change indentation
+function! ChangeIndent(indentSize)
+    execute "set tabstop=".escape(a:indentSize, ' ')
+    execute "set shiftwidth=".escape(a:indentSize, ' ')
+    echo 'Indent size changed to' a:indentSize
+endfunction
+nnoremap <Leader>ci4 :call ChangeIndent(4)<CR>
+nnoremap <Leader>ci2 :call ChangeIndent(2)<CR>
 
 " Custom Theming
 " https://jonasjacek.github.io/colors/
