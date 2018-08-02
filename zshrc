@@ -2,6 +2,7 @@ export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
+ZSH_DISABLE_COMPFIX="true"
 
 # Plugins
 plugins=(git, trash)
@@ -67,8 +68,9 @@ alias gco='git checkout'
 alias gcp='git cherry-pick'
 alias gu='git reset --soft HEAD~1'
 alias cd43='cd ~/Documents/Q2/ngam-43'
-alias cdP='cd ~/Documents/Personal/'
-alias cdWP='cd /Applications/MAMP/htdocs/communitas/wp-content/themes'
+alias cdq='cd ~/Documents/Q2/ngam-43'
+alias cdp='cd ~/Documents/Personal/'
+alias cdwp='cd /Applications/MAMP/htdocs/communitas/wp-content/themes'
 alias gpo='git push -u origin'
 alias ts='tig status'
 alias evim='vim ~/.vimrc'
