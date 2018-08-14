@@ -37,12 +37,6 @@ NeoBundle 'dustinfarris/vim-htmlbars-inline-syntax'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'posva/vim-vue'
-NeoBundle 'Valloric/YouCompleteMe', {
-    \ 'build' : {
-    \     'mac' : './install.py --tern-completer',
-    \     'unix' : './install.py --tern-completer',
-    \   }
-    \ }
 call neobundle#end()
 
 if iCanHazNeoBundle == 0
