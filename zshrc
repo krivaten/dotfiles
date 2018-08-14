@@ -83,6 +83,8 @@ alias vc='vim -c CtrlP'
 alias vn='vim -c NERDTree'
 alias vnginx='vim /usr/local/etc/nginx/nginx.conf'
 alias dswp='find . -type f -name "*.swp" -delete';
+alias ec='sudo sed -iE "s/<AllowLocalProxyConnections>false<\/AllowLocalProxyConnections>/<AllowLocalProxyConnections>true<\/AllowLocalProxyConnections>/" /opt/cisco/anyconnect/profile/Q2-SPLIT-VPN-PROFILE.xml'
+
 
 qGrepFunction() {
     grep -rI --exclude-dir={node_modules,bower_components,tmp} $1 ~/Documents/Q2/{ngam-424/q2-uux/addon,addons}
