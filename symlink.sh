@@ -16,6 +16,7 @@ ln -s ~/dotfilez/tmux.conf ~/.tmux.conf
 ln -s ~/dotfilez/zshrc ~/.zshrc
 ln -s ~/dotfilez/psqlrc ~/.psqlrc
 ln -s ~/dotfilez/tigrc ~/.tigrc
+sudo ln -s ~/dotfilez/sysctl.conf /etc/sysctl.conf
 
 
 echo "*******************************"
