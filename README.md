@@ -17,7 +17,13 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ brew install git
 $ brew install tmux
 $ brew install ack
+$ brew install tig
 $ brew install vim --with-override-system-vi
+```
+
+### Oh My Zsh
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ### NeoBundle

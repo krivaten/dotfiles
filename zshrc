@@ -91,11 +91,11 @@ qGrepFunction() {
 }
 alias qGrep=qGrepFunction
 
-export NVM_DIR="/Users/kvanhouten/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export PATH="$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin" # Add RVM to PATH for scripting
+export PATH=/usr/local/bin:$PATH
 export PGDATA=/usr/local/var/postgres
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
 
 # added by travis gem
 [ -f /Users/kvanhouten/.travis/travis.sh ] && source /Users/kvanhouten/.travis/travis.sh

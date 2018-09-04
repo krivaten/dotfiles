@@ -9,14 +9,14 @@ sudo rm -rf ~/.zshrc > /dev/null 2>&1
 sudo rm -rf ~/.tigrc > /dev/null 2>&1
 sudo rm -rf ~/.psqlrc
 
-ln -s ~/dotfilez/vimrc ~/.vimrc
-ln -s ~/dotfilez/ackrc ~/.ackrc
-ln -s ~/dotfilez/tmux ~/.tmux
-ln -s ~/dotfilez/tmux.conf ~/.tmux.conf
-ln -s ~/dotfilez/zshrc ~/.zshrc
-ln -s ~/dotfilez/psqlrc ~/.psqlrc
-ln -s ~/dotfilez/tigrc ~/.tigrc
-sudo ln -s ~/dotfilez/sysctl.conf /etc/sysctl.conf
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/ackrc ~/.ackrc
+ln -s ~/dotfiles/tmux ~/.tmux
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/psqlrc ~/.psqlrc
+ln -s ~/dotfiles/tigrc ~/.tigrc
+sudo ln -s ~/dotfiles/sysctl.conf /etc/sysctl.conf
 
 
 echo "*******************************"
