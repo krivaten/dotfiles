@@ -1,6 +1,4 @@
-export ZSH=/Users/$USER/.oh-my-zsh
-
-# Set name of the theme to load.
+export ZSH=/Users/$USER/.oh-my-zsh # Set name of the theme to load.
 ZSH_THEME="agnoster"
 ZSH_DISABLE_COMPFIX="true"
 
@@ -68,9 +66,10 @@ alias gco='git checkout'
 alias gcp='git cherry-pick'
 alias gca='git commit --amend --no-edit'
 alias gu='git reset --soft HEAD~1'
-alias cdw='cd ~/Documents/Q2'
-alias cd43='cd ~/Documents/Q2/ngam-43'
-alias cdp='cd ~/Documents/Personal/'
+alias cdw='cd /Code/Q2'
+alias cd44='cd /Code/Q2/ngam'
+alias cdg='cd /Code/Q2/q2-goals-module'
+alias cdp='cd /Code/Personal/'
 alias cdwp='cd /Applications/MAMP/htdocs/communitas/wp-content/themes'
 alias gpo='git push -u origin'
 alias ts='tig status'
@@ -81,8 +80,10 @@ alias v='vim'
 alias y='yarn'
 alias vc='vim -c CtrlP'
 alias vn='vim -c NERDTree'
-alias vnginx='vim /usr/local/etc/nginx/nginx.conf'
+alias enginx='vim /usr/local/etc/nginx/nginx.conf'
 alias dswp='find . -type f -name "*.swp" -delete';
+alias npmd='npm set registry https://registry.npmjs.org/'
+alias npmq2='npm set registry https://sinopia:4873'
 alias ec='sudo sed -iE "s/<AllowLocalProxyConnections>false<\/AllowLocalProxyConnections>/<AllowLocalProxyConnections>true<\/AllowLocalProxyConnections>/" /opt/cisco/anyconnect/profile/Q2-SPLIT-VPN-PROFILE.xml'
 
 
@@ -115,3 +116,10 @@ cd() {
   unset NODE_NAME
   cd_nvm_use
 }
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
